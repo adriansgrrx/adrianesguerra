@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --bg-surface: #131314;
+    --bg-card: #1e1f20;
+    --bg-card-hover: #282a2c;
+    --bg-card-lowest: #0e0e0f;
+    --border-subtle: #333538;
+    --border-light: rgba(255, 255, 255, 0.08);
+    --gemini-primary: #a8c7fa;
+    --gemini-secondary: #d0bcff;
+    --gemini-tertiary: #4285f4;
+  }
+
+  body {
+    background-color: #131314;
+    color: #e5e2e3;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #131314;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #43474f;
+}
+
+/* Subtle border hover */
+.gemini-border-glow {
+  border: 1px solid rgba(168, 199, 250, 0.2);
+}
+
+.gemini-border-glow:hover {
+  border-color: rgba(168, 199, 250, 0.45);
+}
