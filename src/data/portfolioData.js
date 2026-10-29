@@ -157,7 +157,7 @@ export const profileData = {
     "Web Development (React / Node.js)",
   ],
   seo: {
-    title: "Adrian R. Esguerra | Computer Engineer & Big Data Specialist",
+    title: "Adrian R. Esguerra",
     description:
       "Computer engineering graduate from PUP Manila specializing in Big Data Analytics, Edge AI, and software systems.",
     url: "https://ai-drian.vercel.app/",

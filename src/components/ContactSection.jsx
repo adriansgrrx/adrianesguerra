@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2 } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Loader2, Mail } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function ContactSection({ contact }) {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleCopyEmail = () => {
@@ -20,23 +21,67 @@ export default function ContactSection({ contact }) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    setErrorMessage('');
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setErrorMessage('Please fill in your name, email, and message.');
+      return;
+    }
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setErrorMessage(
+        'Email service key is missing. Please add VITE_WEB3FORMS_ACCESS_KEY in your .env file, or use the direct email link below.'
+      );
+      return;
+    }
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      confetti({
-        particleCount: 80,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#a8c7fa', '#d0bcff', '#4285f4'],
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim() || `Portfolio Contact from ${formData.name.trim()}`,
+          message: formData.message.trim(),
+          from_name: formData.name.trim(),
+        }),
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 800);
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#a8c7fa', '#d0bcff', '#4285f4'],
+        });
+        setTimeout(() => setSubmitted(false), 6000);
+      } else {
+        setErrorMessage(
+          data.message || 'Failed to send message. Please try again or reach out directly.'
+        );
+      }
+    } catch (err) {
+      console.error('Contact form submission error:', err);
+      setErrorMessage(
+        'Network error: Unable to reach email service. Please check your internet connection or email directly.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -150,7 +195,10 @@ export default function ContactSection({ contact }) {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-[#a8c7fa] hover:bg-[#d3e2ff] text-[#0a315b] font-medium text-xs sm:text-sm transition-colors cursor-pointer disabled:opacity-50"
               >
                 {isSubmitting ? (
-                  <span>Sending...</span>
+                  <>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    <span>Sending...</span>
+                  </>
                 ) : (
                   <>
                     <span>Send Message</span>
@@ -161,9 +209,31 @@ export default function ContactSection({ contact }) {
             </div>
 
             {submitted && (
-              <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono flex items-center gap-2 animate-fadeIn">
+              <div className="p-3.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono flex items-center gap-2 animate-fadeIn">
                 <CheckCircle2 className="w-4 h-4 shrink-0" />
                 <span>Thank you! Your message has been dispatched successfully.</span>
+              </div>
+            )}
+
+            {errorMessage && (
+              <div className="p-3.5 rounded-lg bg-red-500/10 border border-red-500/20 text-red-300 text-xs font-mono space-y-2 animate-fadeIn">
+                <div className="flex items-start gap-2">
+                  <AlertCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
+                  <span className="leading-relaxed">{errorMessage}</span>
+                </div>
+                <div className="pt-1.5 border-t border-red-500/15 flex items-center gap-2">
+                  <a
+                    href={`mailto:${contact.email}?subject=${encodeURIComponent(
+                      formData.subject || `Portfolio Inquiry from ${formData.name || 'Visitor'}`
+                    )}&body=${encodeURIComponent(
+                      formData.message ? `${formData.message}\n\nFrom: ${formData.name} (${formData.email})` : ''
+                    )}`}
+                    className="inline-flex items-center gap-1.5 text-[#a8c7fa] hover:underline"
+                  >
+                    <Mail className="w-3.5 h-3.5" />
+                    <span>Send directly via your email app instead</span>
+                  </a>
+                </div>
               </div>
             )}
           </form>
