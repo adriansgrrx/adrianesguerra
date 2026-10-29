@@ -141,8 +141,8 @@ export const profileData = {
     {
       id: "website",
       name: "Portfolio",
-      label: "ai-drian.vercel.app",
-      href: "https://ai-drian.vercel.app",
+      label: "adrianesguerra.site",
+      href: "https://www.adrianesguerra.site",
       icon: "Globe",
     },
     {
@@ -163,9 +163,9 @@ export const profileData = {
     title: "Adrian R. Esguerra",
     description:
       "Computer engineering graduate from PUP Manila specializing in Big Data Analytics, Edge AI, and software systems.",
-    url: "https://ai-drian.vercel.app/",
-    ogImage: "https://ai-drian.vercel.app/brand-icon.png",
-    twitterImage: "https://ai-drian.vercel.app/brand-icon.png",
+    url: "https://www.adrianesguerra.site/",
+    ogImage: "https://www.adrianesguerra.site/brand-icon.png",
+    twitterImage: "https://www.adrianesguerra.site/brand-icon.png",
   },
 };
 
