@@ -13,7 +13,7 @@ export default function ExperienceSection({ experiences }) {
             <article className="space-y-2.5">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
                 <div className="text-base sm:text-lg font-medium text-white">
-                  {exp.company} <span className="text-neutral-500 text-sm font-normal">— {exp.role}</span>
+                  {exp.company}
                 </div>
                 <span className="text-xs text-neutral-500 font-mono shrink-0">
                   {exp.period}

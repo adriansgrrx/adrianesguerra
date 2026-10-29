@@ -45,11 +45,6 @@ export default function ProjectsSection({ projects, projectTypes, onSelectProjec
                   <h3 className="text-lg sm:text-xl font-medium text-white group-hover:text-[#a8c7fa] transition-colors">
                     {project.title}
                   </h3>
-                  {project.subtitle && (
-                    <span className="text-neutral-500 text-sm font-normal">
-                      — {project.subtitle}
-                    </span>
-                  )}
                   {project.awardBadge && (
                     <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#282a2c] text-[#a8c7fa]">
                       {project.awardBadge}

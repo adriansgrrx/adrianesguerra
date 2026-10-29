@@ -33,17 +33,6 @@ export default function Sidebar({ profile, activeSection, onNavigate }) {
       <div className="space-y-6">
         {/* Brand Icon, Name & Title */}
         <div className="p-3">
-          <button
-            onClick={() => onNavigate('overview')}
-            className="cursor-pointer focus:outline-none mb-3.5 block group"
-            aria-label="Overview"
-          >
-            <img
-              src="/brand-icon.png"
-              alt="Brand Icon"
-              className="w-8 h-8 lg:w-9 lg:h-9 object-contain transition-transform group-hover:scale-105"
-            />
-          </button>
           <h1 className="text-xl lg:text-2xl font-medium text-white tracking-tight">
             {profile.fullName}
           </h1>

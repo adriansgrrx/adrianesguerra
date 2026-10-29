@@ -42,9 +42,6 @@ export default function ProjectModal({ project, onClose }) {
             <h2 className="text-lg sm:text-2xl md:text-3xl font-medium text-white tracking-tight leading-snug">
               {project.title}
             </h2>
-            {project.subtitle && (
-              <p className="text-xs sm:text-sm text-[#a8c7fa] mt-1">{project.subtitle}</p>
-            )}
             <div className="flex items-center gap-3 text-xs text-neutral-400 font-mono mt-1.5 sm:mt-2">
               <span className="flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5" /> {project.date}

@@ -12,7 +12,7 @@ export const profileData = {
       "Building AI-powered systems, edge solutions, and mobile applications to solve real-world challenges.",
     callToActionHighlight: "Let's solve real-world problems together.",
     avatar: "/avatar.jpg",
-    logo: "/brand-icon.png",
+    logo: "/avatar.jpg",
     badges: [
       {
         id: "cpe",

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function MobileNavbar({ profile, onNavigate }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,56 +14,64 @@ export default function MobileNavbar({ profile, onNavigate }) {
     { id: 'contact', label: 'Contact' },
   ];
 
+  // Lock body scroll when fullscreen mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const handleLinkClick = (id) => {
     onNavigate(id);
     setIsOpen(false);
   };
 
   return (
-    <header className="lg:hidden sticky top-0 z-40 bg-[#131314]/95 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 py-3 flex items-center justify-between select-none">
-      <button
-        onClick={() => handleLinkClick('overview')}
-        className="flex items-center cursor-pointer focus:outline-none group"
-        aria-label="Overview"
-      >
-        <img
-          src="/brand-icon.png"
-          alt="Brand Icon"
-          className="w-7 h-7 object-contain transition-transform group-hover:scale-105"
-        />
-      </button>
-
-      <div className="flex items-center gap-2">
-        <button
-          onClick={() => handleLinkClick('contact')}
-          className="px-3 py-1.5 rounded-full bg-[#a8c7fa] text-[#0a315b] text-xs font-medium cursor-pointer transition-colors hover:bg-[#d3e2ff]"
-        >
-          Contact
-        </button>
-
+    <>
+      <header className="lg:hidden sticky top-0 z-50 h-14 bg-[#131314]/95 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 flex items-center justify-between select-none">
+        {/* Left: Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-1.5 rounded-lg bg-[#1e1f20] text-neutral-300 hover:text-white cursor-pointer transition-colors"
+          className="p-2 rounded-lg bg-[#1e1f20] hover:bg-[#282a2c] text-neutral-300 hover:text-white cursor-pointer transition-colors"
           aria-label="Toggle Navigation Menu"
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
-      </div>
 
+        {/* Right: Contact Button */}
+        <button
+          onClick={() => handleLinkClick('contact')}
+          className="px-4 py-1.5 rounded-full bg-[#a8c7fa] hover:bg-[#d3e2ff] text-[#0a315b] text-xs font-medium cursor-pointer transition-colors"
+        >
+          Contact
+        </button>
+      </header>
+
+      {/* Fullscreen Mobile Dropdown */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 bg-[#131314] border-b border-white/10 p-4 shadow-2xl flex flex-col space-y-1 animate-fadeIn">
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => handleLinkClick(link.id)}
-              className="text-left px-3.5 py-2.5 rounded-xl text-sm text-neutral-300 hover:text-white hover:bg-[#1e1f20] flex items-center justify-between transition-colors cursor-pointer"
-            >
-              <span>{link.label}</span>
-              <ArrowRight className="w-4 h-4 text-neutral-500" />
-            </button>
-          ))}
+        <div className="lg:hidden fixed inset-x-0 top-14 bottom-0 bg-[#131314] z-40 flex flex-col justify-between p-6 sm:p-8 overflow-y-auto animate-fadeIn">
+          <nav className="flex flex-col space-y-2 w-full pt-4">
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => handleLinkClick(link.id)}
+                className="text-left py-3.5 px-4 rounded-xl text-lg font-medium text-neutral-300 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+              >
+                {link.label}
+              </button>
+            ))}
+          </nav>
+
+          <div className="pt-6 border-t border-white/10 text-xs font-mono text-neutral-500">
+            <span>© {new Date().getFullYear()} {profile.fullName}</span>
+          </div>
         </div>
       )}
-    </header>
+    </>
   );
 }

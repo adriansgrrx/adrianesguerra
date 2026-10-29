@@ -37,7 +37,7 @@ export default function OverviewSection({ profile, onNavigate }) {
           onClick={() => onNavigate('projects')}
           className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#a8c7fa] hover:bg-[#d3e2ff] text-[#0a315b] font-medium text-xs sm:text-sm transition-colors cursor-pointer"
         >
-          <span>View Case Studies</span>
+          <span>View Projects</span>
           <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
         </button>
 
