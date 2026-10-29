@@ -60,41 +60,6 @@ export default function ProjectsSection({ projects, projectTypes, onSelectProjec
                 {project.description}
               </p>
 
-              {/* Metrics Readout */}
-              {project.stats && (
-                <div className="text-xs text-neutral-400 font-mono">
-                  {project.stats.map(s => `${s.value} ${s.label}`).join(' • ')}
-                </div>
-              )}
-
-              {/* Telemetry Preview for AS3Ds (Flat, No Pulse or Ping) */}
-              {project.slug === 'as3ds-sorting-defect-detection' && (
-                <div className="my-4 p-4 rounded-xl bg-[#0e0e0f] border border-white/10 font-mono text-xs select-none">
-                  <div className="flex flex-wrap items-center justify-between border-b border-white/10 pb-2 text-neutral-400">
-                    <span className="text-white">STREAM: CAM_01 [JETSON_NANO]</span>
-                    <span className="text-[#a8c7fa]">INFERENCE: 18.4ms (54.3 FPS)</span>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-3">
-                    <div className="border border-emerald-500/50 bg-[#131314] rounded-lg p-2.5 text-center">
-                      <span className="text-emerald-300 font-medium block">IC_SMD_284 [PASS]</span>
-                      <span className="text-[11px] text-neutral-500">conf: 0.942</span>
-                    </div>
-                    <div className="border border-red-500/50 bg-[#131314] rounded-lg p-2.5 text-center">
-                      <span className="text-red-400 font-medium block">BRIDGED_SOLDER [DEFECT]</span>
-                      <span className="text-[11px] text-neutral-500">conf: 0.887 • DIVERT</span>
-                    </div>
-                    <div className="border border-[#a8c7fa]/40 bg-[#131314] rounded-lg p-2.5 text-center">
-                      <span className="text-[#a8c7fa] font-medium block">CAP_RADIAL [PASS]</span>
-                      <span className="text-[11px] text-neutral-500">conf: 0.971</span>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap items-center justify-between text-[11px] text-neutral-500 pt-2 border-t border-white/10">
-                    <span>MODEL: YOLOv8-NANO_PRUNED</span>
-                    <span className="text-emerald-400">ACTUATOR: ARDUINO STEPPER #03 [DIVERTED]</span>
-                  </div>
-                </div>
-              )}
-
               {/* Tags & Action */}
               <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
                 <div className="flex flex-wrap gap-1.5">
