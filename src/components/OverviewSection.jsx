@@ -8,8 +8,8 @@ export default function OverviewSection({ profile, onNavigate }) {
         <span>00 / OVERVIEW</span>
       </div>
 
-      {/* Side-by-side layout for avatar and text */}
-      <div className="flex flex-row items-center sm:items-start gap-4 sm:gap-6 md:gap-8">
+      {/* Hero Layout: 3-line stacked on mobile (photo, name & summary, buttons), side-by-side on sm+ */}
+      <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 md:gap-8">
         {/* Avatar */}
         <div className="relative shrink-0">
           <img
