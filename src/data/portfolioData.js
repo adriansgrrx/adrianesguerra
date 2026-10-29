@@ -5,11 +5,11 @@ export const profileData = {
   lastName: "Esguerra",
   roleTitle: "Computer Engineer",
   shortBio:
-    "Computer engineering graduate from PUP Manila with a focus on big data, AI, data analytics, mobile development, and web development driven to create solutions that make a difference.",
+    "Computer engineering graduate from PUP Manila specializing in Big Data, Edge AI, and full-stack software development to solve real-world problems.",
   hero: {
     greeting: "Hi, I'm",
     tagline:
-      "I'm passionate about AI-powered solutions, from mobile apps to intelligent systems, and driven to address real-world challenges.",
+      "Building AI-powered systems, edge solutions, and mobile applications to solve real-world challenges.",
     callToActionHighlight: "Let's solve real-world problems together.",
     avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBzxEc1IySMvicV_weLhFjCZ0dk5nE7yR_TdkPHICRqfly0TXxo3md_MiMROKuGQbdtdZuU39vT1Ccu4DCSFWa91ACHYCFKOpIrhG5_E3Xx-CEYytWiucYy9z2bffMNds7Hye08-8Ah_DAPmDoD1VobSPybxmjMkeM5G_S2RgvDgMq--gVB6IYWKQ_8gr1EY5_5ytywzDuzsShUe4dimrdwTpwF4dhFC22yv_rAc1ts",
     logo: "/assets/ai-drian-colored.svg",
@@ -63,8 +63,8 @@ export const profileData = {
     headingHighlight: "Me",
     subtitle: "Computer Engineer",
     paragraphs: [
-      "Adrian is a passionate and detail-oriented computer engineering graduate from the Polytechnic University of the Philippines (PUP Manila), with a focus on Big Data Analytics.",
-      "With a deep interest in AI, data analysis, and software development, Adrian is committed to advancing his skills and contributing to projects that utilize cutting-edge technology. His goal is to continuously grow as a professional in the tech industry, solving complex challenges and driving innovation in every role he undertakes.",
+      "Computer engineering graduate from PUP Manila specializing in Big Data Analytics, Edge AI, and intelligent systems.",
+      "Committed to building reliable, high-impact solutions through computer vision, mobile development, and modern cloud technologies.",
     ],
     highlights: [
       "computer engineering graduate",
@@ -154,7 +154,7 @@ export const projectsData = [
     subtitle: "Intelligent Waste Segregation",
     awardBadge: "AppCon '24 Most Creative Award",
     description:
-      "Snap it, Tag it, Trash it! SnapTrash is an innovative android application that leverages computer vision and AI to automatically detect and classify waste in real-time.",
+      "Award-winning mobile app using YOLOv8 AI to detect and classify waste in real-time with geolocation mapping.",
     image: "/Featured/SnapTrash/snaptrash-main.png",
     tags: ["Flutter", "Dart", "YOLOv8", "Roboflow", "Mapbox API", "Firebase"],
     demoUrl: "#",
@@ -164,12 +164,12 @@ export const projectsData = [
     date: "Jun 2025",
     featured: true,
     expandedDescription:
-      "SnapTrash is an award winning mobile application that combines the power of computer vision and artificial intelligence to tackle waste management challenges. The app uses YOLOv8 object detection model to instantly identify and classify different types of waste materials through the device's camera. Users can simply point their phone at any waste item, and the AI will automatically detect, classify, and provide key details for necessary action(s) in real-time.",
+      "Award-winning mobile application using custom YOLOv8 computer vision to detect, classify, and map waste in real-time, promoting community-driven environmental tracking.",
     details: [
-      "Winner of Most Creative Award at AppCon 2024 national tech innovation competition",
-      "Real-time waste detection and classification using custom-trained YOLOv8 models",
-      "Geolocation-based waste mapping (using Mapbox API) for community environmental tracking",
-      "User-friendly Flutter interface with intuitive camera integration",
+      "Winner of Most Creative Award at AppCon 2024 national innovation competition",
+      "Real-time waste detection and categorization via custom-trained YOLOv8 models",
+      "Interactive geolocation waste mapping using Mapbox API",
+      "Intuitive mobile experience built with Flutter and Firebase",
     ],
     technologies: [
       "Flutter",
@@ -203,7 +203,7 @@ export const projectsData = [
     subtitle: "Edge AI Component Flaw Detection",
     awardBadge: "Undergraduate Thesis • 83% Accuracy",
     description:
-      "A YOLOv8-based system to detect, classify, and sort electronic components with real-time defect detection and hardware integration on edge accelerators.",
+      "Edge AI system combining YOLOv8 computer vision and Arduino automation for real-time electronic component sorting and defect detection.",
     image: "/Featured/AS3D/AS3D-2.png",
     tags: ["Python", "YOLOv8", "OpenCV", "Roboflow", "Arduino", "Raspberry Pi"],
     demoUrl: "#",
@@ -213,14 +213,13 @@ export const projectsData = [
     date: "A.Y. 2024-2025",
     featured: true,
     expandedDescription:
-      "Automated Sorting and Defect Detection Using Computer Vision Technology for PUP CpE Laboratory serves as our undergraduate thesis, demonstrating the practical application of AI in industrial quality control processes. Automated Sorting and Defect Detection Device (AS3Ds) is a device designed specifically for electronic components in laboratory environments. This system combines computer vision technology with mechanical automation to efficiently sort various electronic components while simultaneously detecting manufacturing defects.",
+      "Undergraduate thesis project combining YOLOv8 computer vision and edge automation to sort electronic components and detect manufacturing flaws in real-time.",
     details: [
-      "Undergraduate thesis final project with 17,000+ labeled training samples",
-      "Custom YOLOv8 model trained on electronic component dataset",
-      "Real-time defect detection with high accuracy classification (83% overall accuracy)",
-      "Automated sorting mechanism using Arduino and servo motors",
-      "Raspberry Pi and Google Coral integration for edge computing capabilities",
-      "User interface for monitoring and system control",
+      "Custom YOLOv8 vision pipeline trained on 17,000+ labeled component images",
+      "83% overall defect detection accuracy across multiple component categories",
+      "Automated sorting mechanism driven by Arduino and servo actuators",
+      "Edge deployment optimized with Raspberry Pi and Google Coral accelerators",
+      "Desktop control interface for real-time telemetry and monitoring",
     ],
     technologies: [
       "Python",
@@ -253,7 +252,7 @@ export const projectsData = [
     subtitle: "Enterprise Document Governance",
     awardBadge: "Institutional Collaboration",
     description:
-      "Designed the UI for a full-stack MOA management web app focused on usability and workflow efficiency for PUP MOA management.",
+      "UI/UX design for a full-stack MOA management platform streamlining partnership governance and administrative workflows at PUP.",
     image: "/Featured/PUP-MOA/MOA-4.png",
     tags: ["Figma", "UI/UX", "Azure Cloud", "React", "Material Design"],
     demoUrl: "#",
@@ -263,14 +262,12 @@ export const projectsData = [
     date: "Mar 2025",
     featured: true,
     expandedDescription:
-      "The PUP MOA Monitoring System is a comprehensive web application designed to streamline the management and monitoring of Memorandums of Agreement (MOAs) within the Polytechnic University of the Philippines. As the UI/UX designer for this project, I focused on creating an intuitive and efficient interface that enhances workflow productivity for administrators and staff members handling institutional partnerships and agreements.",
+      "Comprehensive web platform designed to streamline Memorandum of Agreement (MOA) lifecycle management and governance across university departments.",
     details: [
-      "Collaborative project with a team of 8 developers and designers",
-      "Comprehensive UI/UX design using Figma with focus on usability testing",
-      "Streamlined document management workflow design",
-      "Azure cloud integration for secure document storage",
-      "Responsive design for both desktop and mobile access",
-      "Currently in publication process",
+      "Collaborative system developed with a cross-functional team of 8",
+      "Comprehensive Figma design system with usability-tested interaction flows",
+      "Streamlined document governance and administrative approval tracking",
+      "Azure cloud integration for secure, centralized document storage",
     ],
     technologies: ["Figma", "UI/UX", "Workflow Prototyping", "Design Systems"],
     stats: [
@@ -291,7 +288,7 @@ export const projectsData = [
     subtitle: "Big Data & Environmental Analytics",
     awardBadge: "Big Data Research",
     description:
-      "Analyzes urban flooding in Mandaue City, correlating heavy rainfall telemetry and population density through big data processing.",
+      "Big data study analyzing multi-year rainfall telemetry and demographic data to evaluate urban flood risks in Mandaue City.",
     image: "/Featured/EDA/EDA-main.png",
     tags: [
       "Python",
@@ -308,14 +305,12 @@ export const projectsData = [
     date: "Sep 2024",
     featured: true,
     expandedDescription:
-      "This comprehensive exploratory data analysis project examines the complex relationship between urban development, environmental factors, and flooding patterns in Mandaue City, Philippines. Using big data analytics and visualization tools, the study identifies key contributing factors to urban flooding and provides actionable insights for city planning and disaster risk reduction strategies.",
+      "Exploratory data analysis correlating multi-year rainfall telemetry, elevation, and population density to map urban flood vulnerability in Mandaue City.",
     details: [
-      "Analysis of multi-year rainfall and flooding data in Mandaue City",
-      "Correlation studies between population density and flood risk areas",
-      "Identification of high-risk areas including Tingub and Subangdaku districts",
-      "Statistical analysis using Apache Spark for large dataset processing",
-      "Interactive data visualizations and dashboards using Tableau",
-      "Evidence-based recommendations for flood mitigation strategies",
+      "Multi-year rainfall and hydrological telemetry analysis across Mandaue City",
+      "Apache Spark pipelines for distributed processing of large urban datasets",
+      "Identified high-vulnerability flood zones including Tingub and Subangdaku",
+      "Interactive Tableau dashboards providing actionable insights for disaster mitigation",
     ],
     technologies: [
       "Python",
@@ -348,7 +343,7 @@ export const projectsData = [
     subtitle: "Maternal Health Tracking",
     awardBadge: "Native Android App",
     description:
-      "A compassionate platform that accompanies expectant mothers throughout their pregnancy journey with milestone tracking and health insights.",
+      "Native Android companion app supporting expectant mothers with milestone tracking, ovulation cycles, and personalized maternal health guidance.",
     image: "/Featured/GoMommy/gomommy-1.png",
     tags: ["Android Studio", "Kotlin", "XML", "Firebase"],
     demoUrl: "#",
@@ -358,14 +353,12 @@ export const projectsData = [
     date: "Jul 2023",
     featured: true,
     expandedDescription:
-      "GoMommy is a comprehensive pregnancy companion mobile application developed to support mothers and expectant mothers throughout their pregnancy journey. The app provides essential features including ovulation tracking, pregnancy stage monitoring, health insights, and educational content. Built with native Android development using Kotlin, the application emphasizes user experience and reliable health information delivery.",
+      "Native Android companion app supporting expectant mothers with milestone tracking, ovulation analytics, and stage-by-stage maternal health guidance.",
     details: [
-      "Complete pregnancy tracking from conception to post-childbirth",
-      "Interactive calendar system for tracking important dates and milestones",
-      "Stage-by-stage pregnancy guidance with educational content",
-      "Health facts and trivia about ovulation cycles and pregnancy",
-      "Firebase integration for secure user data management",
-      "Native Android development with modern UI/UX principles",
+      "End-to-end pregnancy and ovulation cycle tracking calendar",
+      "Stage-by-stage guidance with curated maternal health insights",
+      "Native Android architecture built with Kotlin and XML layouts",
+      "Secure user data management and synchronization via Firebase",
     ],
     technologies: ["Android Studio", "Kotlin", "XML", "Firebase"],
     stats: [
@@ -552,11 +545,11 @@ export const achievementsData = [
     id: "oci-ai-foundations-2025",
     title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
     description:
-      "Earned the OCI AI Foundations Associate certification, showcasing foundational knowledge in AI, ML, and Generative AI within Oracle Cloud Infrastructure.",
+      "Demonstrates foundational expertise in AI, ML, and Generative AI services on Oracle Cloud Infrastructure.",
     date: "August 2025",
     type: "Certification",
     expandedDescription:
-      "The Oracle Cloud Infrastructure (OCI) AI Foundations Associate certification validates knowledge of AI and ML fundamentals with practical applications in Oracle Cloud Infrastructure. The certification covers Generative AI concepts, Large Language Models (LLMs), and core deep learning architectures, along with the use of OCI AI Services such as vision, speech, language, and document understanding. It demonstrates the ability to leverage Oracle's AI tools, including OCI Generative AI Services, Oracle 23ai Vector Database, and Oracle Select AI, for real-world problem-solving and business innovation.",
+      "Validates expertise in AI and ML fundamentals on Oracle Cloud Infrastructure, covering Generative AI architectures, LLMs, OCI AI services (vision, speech, language), and Vector Database integration.",
     details: [
       "Described the fundamentals of Generative AI, Large Language Models (LLMs), and their applications in modern computing.",
       "Differentiated between various machine learning and deep learning architectures, including CNNs, RNNs, and LSTMs.",
@@ -583,11 +576,11 @@ export const achievementsData = [
     id: "intro-langchain-js",
     title: "Introduction to LangChain.js",
     description:
-      "Completed a practical course on building AI-powered applications using LangChain.js with Supabase integration, embeddings, memory, and custom runnable sequences.",
+      "Course on building AI applications using LangChain.js, Supabase vector storage, embeddings, and custom chains.",
     date: "August 2025",
     type: "Certification",
     expandedDescription:
-      "This course focused on applying LangChain.js to develop AI-powered workflows and retrieval-based systems. I learned to set up Supabase for storing embeddings, split and serialize text documents, and fetch contextually relevant answers using chains. The course also introduced advanced concepts such as RunnableSequence, RunnablePassthrough, and memory integration. Through multiple challenges and hands-on exercises, I gained practical knowledge of how to structure, optimize, and scale AI applications built with LangChain.js.",
+      "Hands-on course applying LangChain.js to develop retrieval-augmented workflows, Supabase vector embeddings, prompt templates, and modular RunnableSequences.",
     details: [
       "Explored app flow diagrams for AI-powered applications",
       "Learned about embeddings and their use in semantic search",
@@ -617,11 +610,11 @@ export const achievementsData = [
     id: "intro-ai-engineering",
     title: "Introduction to AI Engineering",
     description:
-      "Completed a comprehensive course on AI engineering fundamentals, focusing on OpenAI APIs, prompt engineering, safety practices, and building an AI-powered application.",
+      "Comprehensive training on OpenAI APIs, prompt engineering, few-shot techniques, and AI safety practices.",
     date: "August 2025",
     type: "Certification",
     expandedDescription:
-      "This course provided hands-on experience with AI concepts and OpenAI tools. Topics included AI engineering basics, working with the OpenAI API, prompt engineering strategies, model fine-tuning, token management, and AI safety practices. I also learned to generate images with the DALL·E 3 API and completed a solo project called 'PollyGlot', where I applied the concepts in a real-world application. The course emphasized not only technical implementation but also responsible AI usage and safety guidelines.",
+      "Hands-on training covering OpenAI APIs, prompt engineering strategies, token optimization, DALL·E 3 integration, and responsible AI safety guidelines.",
     details: [
       "Learned AI engineering fundamentals and how to interact with OpenAI APIs",
       "Practiced making API calls, managing tokens, and using the messages array",
@@ -645,11 +638,11 @@ export const achievementsData = [
     id: "appcon-2024-most-creative",
     title: "AppCon 2024 – Most Creative Award",
     description:
-      "Won the Most Creative Award for SnapTrash, an AI-powered litter detection mobile app, during the AppCon 2024 competition organized by OTis Philippines Inc.",
+      "Won Most Creative Award for SnapTrash, an AI litter detection mobile app, at the national AppCon 2024 competition.",
     date: "Jun 2025",
     type: "Competition",
     expandedDescription:
-      "SnapTrash is a mobile application that leverages computer vision to detect and classify waste in real-time. Developed using Flutter and a custom-trained YOLOv8 model, the app promotes environmental responsibility through geolocation tagging. The project was recognized for its innovation, technical execution, and social relevance at AppCon 2024, a national competition hosted by OTis Philippines Inc.",
+      "Recognized with the Most Creative Award at AppCon 2024 (170+ national participants) for SnapTrash, an AI-powered litter detection and geolocation mapping mobile app built with Flutter and YOLOv8.",
     details: [
       "Developed an AI-powered waste detection mobile app using Flutter for frontend and YOLOv8 for object detection.",
       "Designed and implemented a custom-trained model to identify and categorize different types of litter with real-time accuracy.",
@@ -674,11 +667,11 @@ export const achievementsData = [
     id: "undergraduate-thesis",
     title: "Undergraduate Thesis: AS3Ds Automation",
     description:
-      "Developed an automated sorting and defect detection system for electronic components using YOLOv8 computer vision.",
+      "Automated electronic component sorting and flaw detection system utilizing YOLOv8 computer vision and Arduino automation.",
     date: "A.Y. 2024–2025",
     type: "Academic",
     expandedDescription:
-      "This undergraduate thesis focuses on creating a vision-based system that automates the sorting and defect detection of electronic components for the PUP CPE Laboratory. Leveraging YOLOv8 for real-time classification and defect detection, the system integrates hardware components such as a sorting mechanisms and Arduino microcontroller together with Raspberry Pi to streamline laboratory processes and quality assurance tasks.",
+      "Vision-based automation system for sorting electronic components and detecting surface flaws in laboratory environments, achieving 83% defect classification accuracy.",
     details: [
       "Trained a custom YOLOv8 model to detect component types and surface defects with high accuracy.",
       "Built a labeled dataset of over 17,000 images for component classification.",
