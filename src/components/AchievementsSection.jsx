@@ -4,10 +4,13 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 export default function AchievementsSection({ achievements, achievementTypes }) {
   const [selectedType, setSelectedType] = useState('All');
   const [expandedId, setExpandedId] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const filteredAchievements = selectedType === 'All'
     ? achievements
     : achievements.filter((a) => a.type === selectedType);
+
+  const visibleAchievements = showAll ? filteredAchievements : filteredAchievements.slice(0, 3);
 
   const toggleExpand = (id) => {
     setExpandedId(prev => prev === id ? null : id);
@@ -25,7 +28,10 @@ export default function AchievementsSection({ achievements, achievementTypes }) 
           {achievementTypes.map((type) => (
             <button
               key={type}
-              onClick={() => setSelectedType(type)}
+              onClick={() => {
+                setSelectedType(type);
+                setShowAll(false);
+              }}
               className={`px-3 py-1 rounded-full text-xs font-mono transition-colors duration-150 cursor-pointer whitespace-nowrap shrink-0 ${
                 selectedType === type
                   ? 'bg-[#282a2c] text-[#a8c7fa] font-medium'
@@ -40,7 +46,7 @@ export default function AchievementsSection({ achievements, achievementTypes }) 
 
       {/* Clean Editorial List Separated by Hairline Dividers */}
       <ul className="space-y-1">
-        {filteredAchievements.map((item) => {
+        {visibleAchievements.map((item) => {
           const isExpanded = expandedId === item.id;
           return (
             <li
@@ -103,6 +109,22 @@ export default function AchievementsSection({ achievements, achievementTypes }) 
           );
         })}
       </ul>
+
+      {filteredAchievements.length > 3 && (
+        <div className="pt-8 flex justify-center">
+          <button
+            onClick={() => setShowAll((prev) => !prev)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono text-neutral-300 hover:text-white bg-[#1e1f20] hover:bg-[#282a2c] border border-white/10 hover:border-white/20 transition-all duration-150 cursor-pointer shadow-sm group"
+          >
+            <span>{showAll ? 'See less' : 'See more'}</span>
+            {showAll ? (
+              <ChevronUp className="w-3.5 h-3.5 text-neutral-400 group-hover:text-white transition-colors" />
+            ) : (
+              <ChevronDown className="w-3.5 h-3.5 text-neutral-400 group-hover:text-white transition-colors" />
+            )}
+          </button>
+        </div>
+      )}
     </section>
   );
 }

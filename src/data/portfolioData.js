@@ -54,7 +54,7 @@ export const profileData = {
       },
       {
         id: "projects",
-        value: "5 Projects",
+        value: "6 Projects",
         label: "Featured Works",
         detail: "AI, Web & Mobile",
         icon: "Code2",
@@ -237,7 +237,7 @@ export const projectsData = [
     date: "Jan 2025 – Present",
     featured: true,
     expandedDescription:
-      "Architected and built LangNote, a responsive fullstack personal notebook application. Implemented core note-taking capabilities including note creation, editing, and deletion, along with user account registration and authentication to manage and store personal notes securely.",
+      "A responsive fullstack personal notebook web application. Implemented core note-taking capabilities including note creation, editing, and deletion, along with user account registration and authentication to manage and store personal notes securely.",
     details: [
       "Developed a responsive personal notebook web application for capturing and organizing notes",
       "Implemented user authentication allowing users to create accounts, log in, and securely manage notes",
