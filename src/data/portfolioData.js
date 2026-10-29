@@ -254,6 +254,36 @@ export const projectsData = [
     ],
   },
   {
+    "id": 13,
+    "slug": "langdays",
+    "title": "LangDays",
+    "subtitle": "Celebration",
+    "awardBadge": "",
+    "role": "Fullstack Developer",
+    "description": "Interactive fullstack web application created to celebrate a birthday with a photo gallery and password-protected access.",
+    "image": "/Featured/LangDays/langdays-main.png",
+    "tags": ["MongoDB", "JavaScript", "Node.js", "React.js", "Express.js", "TailwindCSS"],
+    "demoUrl": "https://www.langdays.page/",
+    "githubUrl": "https://github.com/adriansgrrx/LangDays",
+    "isGithubPrivate": false,
+    "type": "Web App",
+    "date": "2026",
+    "featured": true,
+    "expandedDescription": "Developed a fullstack interactive web application designed to celebrate a birthday, featuring a photo grid background and a secure password-protected entry.",
+    "details": [
+      "Developed a fullstack interactive web application designed to celebrate a birthday",
+      "Implemented a secure password-protected entry system with backend authentication",
+      "Designed a responsive photo grid layout showcasing memorable moments"
+    ],
+    "technologies": [
+      "MongoDB", "JavaScript", "Node.js", "React.js", "Express.js", "TailwindCSS"
+    ],
+    "stats": [
+      { "label": "Platform", "value": "Web App" },
+      { "label": "Access", "value": "Password Protected" }
+    ]
+  },
+  {
     id: 2,
     slug: "as3ds-sorting-defect-detection",
     title: "Undergraduate Thesis: AS3Ds Automation",

@@ -65,12 +65,6 @@ export default function ProjectsSection({ projects, projectTypes, onSelectProjec
                         {project.awardBadge}
                       </span>
                     )}
-                    {demoUrl && (
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        <span>Demo Available</span>
-                      </span>
-                    )}
                   </div>
                   <span className="text-xs text-neutral-500 font-mono shrink-0">
                     {project.date}
