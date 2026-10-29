@@ -77,7 +77,7 @@ export const profileData = {
     headingHighlight: "Me",
     subtitle: "Computer Engineer • PUP Manila",
     paragraphs: [
-      "Computer Engineering graduate with specialization in Big Data from the Polytechnic University of the Philippines (PUP Manila)",
+      "I am a computer engineer with a specialization in Big Data from the PUP Manila.",
       "Professional experience spanning master data administration and GenAI chat agent development at Vertiv, server analytics and Python/KNIME automation at General Motors, and production mobile app development in Flutter at 8Box Solutions.",
       "One of the developers of SnapTrash (Most Creative Award at AppCon 2024), a YOLOv8-based computer vision defect detection thesis achieving 83% mAP, and data-driven disaster risk analytics for urban flooding in Mandaue City.",
     ],

@@ -12,9 +12,9 @@ export default function AboutSection({ about }) {
           <h2 className="text-2xl sm:text-3xl font-medium text-white tracking-tight">
             {about.heading} <span className="text-[#a8c7fa]">{about.headingHighlight}</span>
           </h2>
-          <p className="text-xs sm:text-sm text-neutral-400 font-mono mt-1">
+          {/* <p className="text-xs sm:text-sm text-neutral-400 font-mono mt-1">
             {about.subtitle}
-          </p>
+          </p> */}
         </div>
 
         {/* Narrative Paragraphs */}

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Send, CheckCircle2, AlertCircle, Loader2, Mail } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
+const DEFAULT_WEB3FORMS_KEY = 'f43a9f9b-c5fc-450a-9605-2394335f9caf';
+
 export default function ContactSection({ contact }) {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,7 +32,7 @@ export default function ContactSection({ contact }) {
       return;
     }
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || DEFAULT_WEB3FORMS_KEY;
     if (!accessKey) {
       setErrorMessage(
         'Email service key is missing. Please add VITE_WEB3FORMS_ACCESS_KEY in your .env file, or use the direct email link below.'
