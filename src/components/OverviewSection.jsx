@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   ArrowRight,
-  ArrowUpRight,
   Mail,
   Award,
   GraduationCap,
@@ -101,35 +100,24 @@ export default function OverviewSection({ profile, onNavigate }) {
       {stats.length > 0 && (
         <div className="flex flex-col sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-white/10 pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/10">
           {stats.map((stat, idx) => {
-            const isClickable = Boolean(stat.targetSection && onNavigate);
-            const Component = isClickable ? 'button' : 'div';
             const accentColor = stat.accent || (idx % 2 === 0 ? '#a8c7fa' : '#d0bcff');
 
             return (
-              <Component
+              <div
                 key={stat.id || idx}
-                type={isClickable ? 'button' : undefined}
-                onClick={isClickable ? () => onNavigate(stat.targetSection) : undefined}
-                className={`flex-1 min-w-0 text-left space-y-1.5 py-4 first:pt-0 last:pb-0 sm:py-0 sm:px-6 first:sm:pl-0 last:sm:pr-0 transition-colors duration-150 group ${
-                  isClickable ? 'cursor-pointer focus:outline-none' : ''
-                }`}
-                title={isClickable ? `Jump to ${stat.targetSection}` : undefined}
+                className="flex-1 min-w-0 text-left space-y-1.5 py-4 first:pt-0 last:pb-0 sm:py-0 sm:px-6 first:sm:pl-0 last:sm:pr-0"
               >
                 <div className="flex items-center justify-between gap-2">
                   <div
-                    className="font-mono text-base sm:text-lg font-semibold tracking-tight flex items-center gap-1.5 transition-colors group-hover:brightness-125"
+                    className="font-mono text-base sm:text-lg font-semibold tracking-tight flex items-center gap-1.5"
                     style={{ color: accentColor }}
                   >
                     {renderStatIcon(stat.icon, stat.id)}
                     <span className="truncate">{stat.value}</span>
                   </div>
-
-                  {isClickable && (
-                    <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 opacity-0 group-hover:opacity-100 group-hover:text-[#a8c7fa] transition-opacity shrink-0" />
-                  )}
                 </div>
 
-                <div className="text-xs text-neutral-200 font-medium leading-tight group-hover:text-white transition-colors">
+                <div className="text-xs text-neutral-200 font-medium leading-tight">
                   {stat.label}
                 </div>
 
@@ -138,7 +126,7 @@ export default function OverviewSection({ profile, onNavigate }) {
                     {stat.detail}
                   </div>
                 )}
-              </Component>
+              </div>
             );
           })}
         </div>
