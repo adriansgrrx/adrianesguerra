@@ -241,7 +241,7 @@ export default function ContactSection({ contact }) {
 
         {/* Flat Terminal Footer with Divider */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-neutral-500 gap-2 select-none">
-          <span className="text-neutral-500">Adrian Esguerra • 2025</span>
+          <span className="text-neutral-500">Adrian Esguerra • 2026</span>
         </div>
       </div>
     </section>
