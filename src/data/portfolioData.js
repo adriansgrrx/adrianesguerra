@@ -162,7 +162,7 @@ export const profileData = {
   seo: {
     title: "Adrian R. Esguerra",
     description:
-      "Computer engineering graduate from PUP Manila specializing in Big Data Analytics, Edge AI, and software systems.",
+      "MDA @Vertiv | Ex-General Motors PH | AI Enthusiast | Computer Engineer | LSSYB Trained",
     url: "https://www.adrianesguerra.site/",
     ogImage: "https://www.adrianesguerra.site/brand-icon.png",
     twitterImage: "https://www.adrianesguerra.site/brand-icon.png",

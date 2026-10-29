@@ -52,8 +52,8 @@ export default function OverviewSection({ profile, onNavigate }) {
         <span>00 / OVERVIEW</span>
       </div> */}
 
-      {/* Hero Layout: 3-line stacked on mobile (photo, name & summary, buttons), side-by-side on sm+ */}
-      <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 md:gap-8">
+      {/* Hero Layout: Side-by-side avatar, name, and short description on both mobile and desktop */}
+      <div className="flex flex-row items-start gap-3.5 sm:gap-6 md:gap-8">
         {/* Avatar */}
         <div className="relative shrink-0">
           <img
@@ -64,8 +64,8 @@ export default function OverviewSection({ profile, onNavigate }) {
         </div>
 
         {/* Hero Narrative */}
-        <div className="space-y-1.5 sm:space-y-2.5 flex-1 min-w-0">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-white tracking-tight leading-tight">
+        <div className="space-y-1 sm:space-y-2 flex-1 min-w-0">
+          <h1 className="text-xl sm:text-3xl md:text-4xl font-medium text-white tracking-tight leading-tight">
             {profile.fullName}
           </h1>
 
@@ -76,11 +76,11 @@ export default function OverviewSection({ profile, onNavigate }) {
       </div>
 
       {/* Action Triggers - standard sizing aligned to start */}
-      <div className="flex flex-wrap items-center justify-start gap-3 pt-5 sm:pt-6">
+      <div className="flex flex-wrap items-center justify-start gap-2.5 sm:gap-3 pt-4 sm:pt-6">
         <button
           type="button"
           onClick={() => onNavigate('projects')}
-          className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#a8c7fa] hover:bg-[#d3e2ff] text-[#0a315b] font-medium text-xs sm:text-sm transition-colors cursor-pointer"
+          className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#a8c7fa] hover:bg-[#d3e2ff] text-[#0a315b] font-medium text-xs sm:text-sm transition-colors cursor-pointer"
         >
           <span>View Projects</span>
           <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
@@ -89,7 +89,7 @@ export default function OverviewSection({ profile, onNavigate }) {
         <button
           type="button"
           onClick={() => onNavigate('contact')}
-          className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1e1f20] hover:bg-[#282a2c] border border-white/10 text-white text-xs sm:text-sm font-medium transition-colors cursor-pointer"
+          className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1e1f20] hover:bg-[#282a2c] border border-white/10 text-white text-xs sm:text-sm font-medium transition-colors cursor-pointer"
         >
           <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-300 shrink-0" />
           <span>Get in Touch</span>
