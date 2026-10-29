@@ -1,15 +1,15 @@
 export const profileData = {
   brandName: "ai-drian",
-  fullName: "Adrian R. Esguerra",
+  fullName: "Adrian Esguerra",
   firstName: "Adrian",
   lastName: "Esguerra",
   roleTitle: "Computer Engineer",
   shortBio:
-    "BS Computer Engineering graduate from PUP Manila specializing in Big Data Analytics, Edge AI, and software systems to solve real-world problems.",
+    "Computer Engineer from PUP Manila with specialization in Big Data",
   hero: {
     greeting: "Hi, I'm",
     tagline:
-      "BS Computer Engineering graduate from PUP Manila specializing in Big Data Analytics, Edge AI, and software systems.",
+      "MDA @Vertiv | Ex-General Motors PH | AI Enthusiast | Computer Engineer | LSSYB Trained",
     callToActionHighlight: "Let's solve real-world problems together.",
     avatar: "/avatar.jpg",
     logo: "/brand-icon.png",
@@ -77,9 +77,9 @@ export const profileData = {
     headingHighlight: "Me",
     subtitle: "Computer Engineer • PUP Manila",
     paragraphs: [
-      "Computer Engineering graduate with specialization in Big Data Analytics from the Polytechnic University of the Philippines (PUP Manila) with a GWA of 1.42.",
+      "Computer Engineering graduate with specialization in Big Data from the Polytechnic University of the Philippines (PUP Manila)",
       "Professional experience spanning master data administration and GenAI chat agent development at Vertiv, server analytics and Python/KNIME automation at General Motors, and production mobile app development in Flutter at 8Box Solutions.",
-      "Developer of SnapTrash (Most Creative Award at AppCon 2024), a YOLOv8-based computer vision defect detection thesis achieving 83% mAP, and data-driven disaster risk analytics for urban flooding in Mandaue City.",
+      "One of the developers of SnapTrash (Most Creative Award at AppCon 2024), a YOLOv8-based computer vision defect detection thesis achieving 83% mAP, and data-driven disaster risk analytics for urban flooding in Mandaue City.",
     ],
     highlights: [
       "BS Computer Engineering (Specialization in Big Data)",

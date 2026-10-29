@@ -1,6 +1,17 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, Award, Calendar, Lock, Unlock } from 'lucide-react';
+import { X, CheckCircle2, Award, Calendar, Lock, Unlock, ExternalLink } from 'lucide-react';
 import { GithubIcon } from './Icons';
+
+const getDemoUrl = (project) => {
+  if (!project) return null;
+  const rawUrl = project.demoUrl || project.liveUrl || project.demo || project.demoLink;
+  if (typeof rawUrl !== 'string') return null;
+  const trimmed = rawUrl.trim();
+  if (!trimmed || trimmed === '#' || trimmed.toLowerCase() === 'n/a' || trimmed.startsWith('javascript:')) {
+    return null;
+  }
+  return trimmed;
+};
 
 export default function ProjectModal({ project, onClose }) {
   useEffect(() => {
@@ -135,6 +146,17 @@ export default function ProjectModal({ project, onClose }) {
             )}
           </div>
           <div className="flex items-center gap-2 shrink-0">
+            {getDemoUrl(project) && (
+              <a
+                href={getDemoUrl(project)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded bg-[#282a2c] hover:bg-[#333538] border border-[#a8c7fa]/30 hover:border-[#a8c7fa]/60 text-[#a8c7fa] hover:text-white text-xs font-mono transition-colors"
+              >
+                <ExternalLink className="w-3.5 h-3.5 text-[#a8c7fa]" />
+                <span>View Demo</span>
+              </a>
+            )}
             {project.githubUrl && project.githubUrl !== '#' && (
               <a
                 href={project.githubUrl}

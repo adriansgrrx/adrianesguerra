@@ -49,9 +49,9 @@ export default function OverviewSection({ profile, onNavigate }) {
 
   return (
     <section id="overview" className="scroll-mt-12 border-b border-white/10 pb-12 pt-6">
-      <div className="text-xs tracking-widest uppercase text-neutral-500 font-mono mb-8">
+      {/* <div className="text-xs tracking-widest uppercase text-neutral-500 font-mono mb-8">
         <span>00 / OVERVIEW</span>
-      </div>
+      </div> */}
 
       {/* Hero Layout: 3-line stacked on mobile (photo, name & summary, buttons), side-by-side on sm+ */}
       <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 md:gap-8">
