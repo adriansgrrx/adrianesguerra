@@ -1,10 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUp } from 'lucide-react';
 import confetti from 'canvas-confetti';
+
+const currentYear = new Date().getFullYear();
 
 export default function MobileNavbar({ profile, onNavigate }) {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // Monitor scroll for mobile back-to-top visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 280);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    onNavigate('overview');
+  };
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(profile.contact.email).then(() => {
@@ -58,6 +76,25 @@ export default function MobileNavbar({ profile, onNavigate }) {
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
 
+        {/* Center: Brand Name with navigation to overview */}
+        <button
+          onClick={() => {
+            scrollToTop();
+            setIsOpen(false);
+          }}
+          className="flex items-center gap-2 group cursor-pointer focus:outline-none"
+          aria-label="Navigate to overview"
+        >
+          <img
+            src="/brand-icon.png"
+            alt={profile.fullName}
+            className="w-6 h-6 rounded-md object-cover border border-white/10"
+          />
+          <span className="text-xs sm:text-sm font-medium text-white group-hover:text-[#a8c7fa] transition-colors truncate max-w-[160px] sm:max-w-none">
+            {profile.fullName}
+          </span>
+        </button>
+
         {/* Right: Contact Button */}
         <button
           onClick={() => handleLinkClick('contact')}
@@ -66,6 +103,21 @@ export default function MobileNavbar({ profile, onNavigate }) {
           Contact
         </button>
       </header>
+
+      {/* Floating Back to Top Button (Mobile view only) */}
+      <button
+        type="button"
+        onClick={scrollToTop}
+        className={`lg:hidden fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#1e1f20]/90 hover:bg-[#282a2c] active:scale-95 text-[#a8c7fa] border border-white/15 backdrop-blur-md shadow-lg shadow-black/50 transition-all duration-300 cursor-pointer flex items-center justify-center ${
+          showBackToTop && !isOpen
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+        aria-label="Back to top"
+        title="Back to top"
+      >
+        <ArrowUp className="w-4 h-4" />
+      </button>
 
       {/* Fullscreen Mobile Dropdown */}
       {isOpen && (
@@ -131,7 +183,7 @@ export default function MobileNavbar({ profile, onNavigate }) {
             </div>
 
             <div className="text-[11px] font-mono text-neutral-500 pt-1">
-              <span>© {new Date().getFullYear()} {profile.fullName}</span>
+              <span>© {currentYear} {profile.fullName}</span>
             </div>
           </div>
         </div>

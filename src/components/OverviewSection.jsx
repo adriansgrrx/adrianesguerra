@@ -1,7 +1,52 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Download, Mail, Award, CheckCircle2 } from 'lucide-react';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Mail,
+  Award,
+  GraduationCap,
+  Brain,
+  Code2,
+  Cpu,
+  Trophy,
+  Sparkles,
+  FolderGit2,
+} from 'lucide-react';
+
+const iconMap = {
+  Award,
+  GraduationCap,
+  Brain,
+  Code2,
+  Cpu,
+  Trophy,
+  Sparkles,
+  FolderGit2,
+};
+
+function renderStatIcon(iconName, id) {
+  if (iconName && iconMap[iconName]) {
+    const IconComponent = iconMap[iconName];
+    return <IconComponent className="w-4 h-4 shrink-0" />;
+  }
+
+  switch (id) {
+    case 'award':
+      return <Award className="w-4 h-4 shrink-0" />;
+    case 'gwa':
+      return <GraduationCap className="w-4 h-4 shrink-0" />;
+    case 'ai-projects':
+      return <Brain className="w-4 h-4 shrink-0" />;
+    case 'projects':
+      return <Code2 className="w-4 h-4 shrink-0" />;
+    default:
+      return <Sparkles className="w-4 h-4 shrink-0" />;
+  }
+}
 
 export default function OverviewSection({ profile, onNavigate }) {
+  const stats = profile?.hero?.stats || [];
+
   return (
     <section id="overview" className="scroll-mt-12 border-b border-white/10 pb-12 pt-6">
       <div className="text-xs tracking-widest uppercase text-neutral-500 font-mono mb-8">
@@ -34,6 +79,7 @@ export default function OverviewSection({ profile, onNavigate }) {
       {/* Action Triggers - standard sizing aligned to start */}
       <div className="flex flex-wrap items-center justify-start gap-3 pt-5 sm:pt-6">
         <button
+          type="button"
           onClick={() => onNavigate('projects')}
           className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#a8c7fa] hover:bg-[#d3e2ff] text-[#0a315b] font-medium text-xs sm:text-sm transition-colors cursor-pointer"
         >
@@ -42,6 +88,7 @@ export default function OverviewSection({ profile, onNavigate }) {
         </button>
 
         <button
+          type="button"
           onClick={() => onNavigate('contact')}
           className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#1e1f20] hover:bg-[#282a2c] border border-white/10 text-white text-xs sm:text-sm font-medium transition-colors cursor-pointer"
         >
@@ -50,45 +97,52 @@ export default function OverviewSection({ profile, onNavigate }) {
         </button>
       </div>
 
-      {/* Grid Stats Bar */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-4 pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/10">
-        <div className="space-y-1 pr-4">
-          <div className="font-mono text-base sm:text-lg font-semibold text-[#a8c7fa] flex items-center gap-1.5">
-            <Award className="w-4 h-4" />
-            AppCon '24
-          </div>
-          <div className="text-xs text-neutral-400 font-mono leading-tight">
-            Most Creative Award
-          </div>
-        </div>
+      {/* Dynamic Divider-Separated Stats Bar */}
+      {stats.length > 0 && (
+        <div className="flex flex-col sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-white/10 pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/10">
+          {stats.map((stat, idx) => {
+            const isClickable = Boolean(stat.targetSection && onNavigate);
+            const Component = isClickable ? 'button' : 'div';
+            const accentColor = stat.accent || (idx % 2 === 0 ? '#a8c7fa' : '#d0bcff');
 
-        <div className="space-y-1 px-0 sm:px-4 sm:border-l sm:border-white/10">
-          <div className="font-mono text-base sm:text-lg font-semibold text-white">
-            83% mAP
-          </div>
-          <div className="text-xs text-neutral-400 font-mono leading-tight">
-            Vision Model Precision
-          </div>
-        </div>
+            return (
+              <Component
+                key={stat.id || idx}
+                type={isClickable ? 'button' : undefined}
+                onClick={isClickable ? () => onNavigate(stat.targetSection) : undefined}
+                className={`flex-1 min-w-0 text-left space-y-1.5 py-4 first:pt-0 last:pb-0 sm:py-0 sm:px-6 first:sm:pl-0 last:sm:pr-0 transition-colors duration-150 group ${
+                  isClickable ? 'cursor-pointer focus:outline-none' : ''
+                }`}
+                title={isClickable ? `Jump to ${stat.targetSection}` : undefined}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <div
+                    className="font-mono text-base sm:text-lg font-semibold tracking-tight flex items-center gap-1.5 transition-colors group-hover:brightness-125"
+                    style={{ color: accentColor }}
+                  >
+                    {renderStatIcon(stat.icon, stat.id)}
+                    <span className="truncate">{stat.value}</span>
+                  </div>
 
-        <div className="space-y-1 pr-4 sm:px-4 sm:border-l sm:border-white/10">
-          <div className="font-mono text-base sm:text-lg font-semibold text-white">
-            1.42
-          </div>
-          <div className="text-xs text-neutral-400 font-mono leading-tight">
-            PUP Manila GWA
-          </div>
-        </div>
+                  {isClickable && (
+                    <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 opacity-0 group-hover:opacity-100 group-hover:text-[#a8c7fa] transition-opacity shrink-0" />
+                  )}
+                </div>
 
-        <div className="space-y-1 px-0 sm:px-4 sm:border-l sm:border-white/10">
-          <div className="font-mono text-base sm:text-lg font-semibold text-[#d0bcff]">
-            5 Projects
-          </div>
-          <div className="text-xs text-neutral-400 font-mono leading-tight">
-            AI, Web & Mobile
-          </div>
+                <div className="text-xs text-neutral-200 font-medium leading-tight group-hover:text-white transition-colors">
+                  {stat.label}
+                </div>
+
+                {stat.detail && (
+                  <div className="text-[11px] text-neutral-400 font-mono leading-tight">
+                    {stat.detail}
+                  </div>
+                )}
+              </Component>
+            );
+          })}
         </div>
-      </div>
+      )}
     </section>
   );
 }

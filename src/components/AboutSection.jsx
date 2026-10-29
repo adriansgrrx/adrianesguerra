@@ -35,16 +35,12 @@ export default function AboutSection({ about }) {
             </div>
             <div className="text-sm text-neutral-300 font-normal flex flex-wrap items-center gap-2">
               <span>Bachelor of Science in Computer Engineering</span>
-              <span className="text-neutral-500">•</span>
-              <span className="text-[#a8c7fa] font-mono text-xs">Specialization in Big Data Analytics</span>
+              <span className="text-[#a8c7fa] font-mono text-xs">with specialization in Big Data</span>
               <span className="text-neutral-500">•</span>
               <span className="text-neutral-300 font-mono text-xs">GWA: 1.42</span>
             </div>
             <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
               <strong className="text-neutral-300 font-medium">Thesis:</strong> Automated Sorting and Defect Detection of Electronic Components Using Computer Vision for PUP CPE Laboratory
-            </p>
-            <p className="text-xs text-neutral-400 font-mono leading-relaxed">
-              Coursework: Emerging Technologies, Operating Systems, Software Development, Data Analysis, Electronics, Robotics, Data Structures and Algorithms
             </p>
           </div>
 
