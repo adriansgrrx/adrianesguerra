@@ -509,7 +509,7 @@ export const experiencesData = [
   {
     id: "vertiv",
     company: "Vertiv",
-    role: "Master Data Administrator & Ivy GenAI Chat Agent Architect",
+    role: "Master Data Administrator",
     period: "2023 — Present",
     location: "Philippines",
     type: "Full-Time",
@@ -525,7 +525,7 @@ export const experiencesData = [
   {
     id: "general-motors",
     company: "General Motors",
-    role: "Automation & Analytics Intern",
+    role: "Server Analytics Intern",
     period: "2022 — 2023",
     location: "Philippines",
     type: "Internship",

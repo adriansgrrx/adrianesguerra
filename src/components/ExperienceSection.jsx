@@ -11,9 +11,14 @@ export default function ExperienceSection({ experiences }) {
         {experiences.map((exp, idx) => (
           <React.Fragment key={exp.id}>
             <article className="space-y-2.5">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-                <div className="text-base sm:text-lg font-medium text-white">
-                  {exp.company}
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-2">
+                <div>
+                  <h3 className="text-base sm:text-lg font-medium text-white">
+                    {exp.role}
+                  </h3>
+                  <div className="text-xs sm:text-sm text-neutral-400 font-normal mt-0.5">
+                    {exp.company}
+                  </div>
                 </div>
                 <span className="text-xs text-neutral-500 font-mono shrink-0">
                   {exp.period}
