@@ -223,13 +223,13 @@ export const projectsData = [
     id: 12,
     slug: "langnote",
     title: "LangNote",
-    subtitle: "Notes",
+    subtitle: "Personal Notebook Web App",
     awardBadge: "",
     role: "Fullstack Developer",
     description:
-      "AI-powered waste detection mobile app featuring real-time YOLOv8 classification and geolocation mapping, awarded Most Creative at AppCon 2024.",
-    image: "/Featured/SnapTrash/snaptrash-main.png",
-    tags: ["MongoDB", "JavaScript", "Node.js", "React.js", "Express.js", "Mongoose", "TailwindCSS"],
+      "A clean, minimalist personal notebook web application designed for creating, organizing, and managing personal notes with secure user authentication.",
+    image: "/Featured/LangNote/langnote-main.png",
+    tags: ["MongoDB", "Express.js", "React.js", "Node.js", "TailwindCSS"],
     demoUrl: "https://www.mylangnote.me/",
     githubUrl: "https://github.com/adriansgrrx/LangNote",
     isGithubPrivate: false,
@@ -237,30 +237,20 @@ export const projectsData = [
     date: "Jan 2025 – Present",
     featured: true,
     expandedDescription:
-      "Developed a mobile application for AI-powered waste detection with real-time classification and geolocation. Built a custom object detection model using YOLOv8 with a cross-functional team, winning Most Creative Award at AppCon 2024 by OTis Philippines, Inc.",
+      "Architected and built LangNote, a responsive fullstack personal notebook application. Implemented core note-taking capabilities including note creation, editing, and deletion, along with user account registration and authentication to manage and store personal notes securely.",
     details: [
-      "Developed a mobile application for AI-powered waste detection with real-time classification and geolocation",
-      "Built a custom object detection model using YOLOv8 with a cross-functional team, showcasing teamwork",
-      "Won Most Creative Award at AppCon 2024, a national tech innovation competition by OTis Philippines, Inc.",
-      "Integrated Mapbox API for geolocation mapping and environmental tracking with a Flutter frontend",
+      "Developed a responsive personal notebook web application for capturing and organizing notes",
+      "Implemented user authentication allowing users to create accounts, log in, and securely manage notes",
+      "Engineered complete CRUD functionality for creating, viewing, updating, and deleting note entries",
+      "Designed an intuitive, minimalist user interface with responsive layouts using TailwindCSS",
     ],
     technologies: [
-      "MongoDB", "JavaScript", "Node.js", "React.js", "Express.js", "Mongoose", "TailwindCSS"
+      "React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "TailwindCSS", "JavaScript"
     ],
     stats: [
-      { label: "Recognition", value: "AppCon '24 Winner" },
-      { label: "Model", value: "YOLOv8 Vision" },
-      { label: "Mapping", value: "Mapbox Telemetry" },
-    ],
-    images: [
-      "/Featured/SnapTrash/snaptrash-main.png",
-      "/Featured/SnapTrash/snaptrash-feat-1.png",
-      "/Featured/SnapTrash/snaptrash-feat-2.png",
-      "/Featured/SnapTrash/snaptrash-feat-3.png",
-      "/Featured/SnapTrash/snaptrash-feat-4.png",
-      "/Featured/SnapTrash/snaptrash-cert.png",
-      "/Featured/SnapTrash/snaptrash-award.png",
-      "/Featured/SnapTrash/snaptrash-grp.png",
+      { label: "Category", value: "Productivity" },
+      { label: "Architecture", value: "MERN Stack" },
+      { label: "Platform", value: "Web Application" },
     ],
   },
   {
@@ -619,7 +609,6 @@ export const experiencesData = [
     description:
       "Handle creation, update, and maintenance of master data records within Vertiv’s “source of truth”, coordinating service timelines and developing GenAI process automations.",
     highlights: [
-      "Handle creation, update, and maintenance of master data records within Vertiv’s “source of truth”",
       "Coordinate with Field Service Engineers, Technicians, Order Entry, Contracts Team, etc. to ensure accurate service timelines and data alignment.",
       "Initiated “Ivy”, an AI-powered MDM Chat Agent, using Vertiv's GenAI platform as a team process improvement to streamline data management workflows, which later adopted by other teams to have their own.",
     ],
@@ -635,7 +624,6 @@ export const experiencesData = [
     description:
       "Built automated analytics and data extraction workflows in KNIME and Python while managing Power BI dashboards for server infrastructure operations.",
     highlights: [
-      "Built automation workflows using KNIME and Python for scripting and data extraction.",
       "Assisted the team to process internal analytics requests, supporting back-office tasks.",
       "Gained hands-on experience with Power BI dashboards (server and cloud platforms).",
       "Extended internship beyond 300 hours due to consistent performance and adaptability to new tools.",
@@ -652,7 +640,6 @@ export const experiencesData = [
     description:
       "Contributed to the development of production mobile apps in Flutter, implementing API integrations and fixing bugs to improve reliability.",
     highlights: [
-      "Contributed to the development of production mobile apps in Flutter, implementing API integrations and fixing bugs to improve reliability.",
       "Worked closely with backend and design teams, ensuring features were delivered according to client requirements and project timelines.",
     ],
     tags: ["Flutter", "Dart", "RESTful APIs", "Mobile Development", "Agile"],
@@ -667,7 +654,6 @@ export const experiencesData = [
     description:
       "Designed and tested reusable frontend components in Flutter that supported faster development in later projects.",
     highlights: [
-      "Designed and tested reusable frontend components that supported faster development in later projects.",
       "Participated in Agile sprints, regularly contributing to the completion of client deliverables.",
     ],
     tags: ["Flutter", "Dart", "Component Design", "UI/UX", "Agile (Scrum)"],
@@ -682,7 +668,6 @@ export const experiencesData = [
     description:
       "Guided students in mastering fundamental math concepts through individualized support and encouragement.",
     highlights: [
-      "Guided students in mastering fundamental math concepts through individualized support and encouragement.",
       "Reviewed and corrected worksheets, helping students identify areas for improvement and build confidence in problem-solving.",
     ],
     tags: ["Mathematics", "Tutoring", "Mentorship", "Problem Solving"],

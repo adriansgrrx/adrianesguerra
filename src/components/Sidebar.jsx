@@ -40,11 +40,6 @@ export default function Sidebar({ profile, activeSection, onNavigate }) {
             aria-label="Navigate to overview"
             title="Navigate to Overview"
           >
-            <img
-              src="/brand-icon.png"
-              alt={profile.fullName}
-              className="w-10 h-10 rounded-xl object-cover border border-white/10 mb-3 group-hover:border-[#a8c7fa]/40 transition-colors"
-            />
             <div>
               <h1 className="text-xl lg:text-md font-medium text-white tracking-tight group-hover:text-[#a8c7fa] transition-colors">
                 {profile.fullName}

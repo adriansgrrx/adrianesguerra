@@ -76,24 +76,6 @@ export default function MobileNavbar({ profile, onNavigate }) {
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
 
-        {/* Center: Brand Name with navigation to overview */}
-        <button
-          onClick={() => {
-            scrollToTop();
-            setIsOpen(false);
-          }}
-          className="flex items-center gap-2 group cursor-pointer focus:outline-none"
-          aria-label="Navigate to overview"
-        >
-          <img
-            src="/brand-icon.png"
-            alt={profile.fullName}
-            className="w-6 h-6 rounded-md object-cover border border-white/10"
-          />
-          <span className="text-xs sm:text-sm font-medium text-white group-hover:text-[#a8c7fa] transition-colors truncate max-w-[160px] sm:max-w-none">
-            {profile.fullName}
-          </span>
-        </button>
 
         {/* Right: Contact Button */}
         <button

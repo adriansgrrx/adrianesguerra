@@ -47,13 +47,13 @@ export default function AboutSection({ about }) {
           {/* Senior High School */}
           <div className="pt-4 border-t border-white/5 space-y-1">
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-              <h4 className="text-sm font-medium text-neutral-300">
+              <h3 className="text-base font-medium text-neutral-300">
                 Northern Zambales College, Inc. <span className="text-neutral-500 text-xs font-normal">(NZCI) — Masinloc, Zambales</span>
-              </h4>
+              </h3>
               <span className="text-xs text-neutral-500 font-mono">Jul 2019 – Jul 2021</span>
             </div>
-            <div className="text-xs text-neutral-400">
-              Science, Technology, Engineering, and Mathematics (STEM) Strand <span className="text-[#a8c7fa] font-mono">• With High Honors</span>
+            <div className="text-sm text-neutral-400">
+              Science, Technology, Engineering, and Mathematics (STEM) Strand <span className="text-[#a8c7fa] font-mono text-xs">• With High Honors</span>
             </div>
           </div>
         </div>
