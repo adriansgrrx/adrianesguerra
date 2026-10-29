@@ -31,12 +31,23 @@ export default function Sidebar({ profile, activeSection, onNavigate }) {
   return (
     <aside className="hidden lg:flex w-[20%] min-w-[240px] max-w-[280px] h-screen fixed top-0 left-0 border-r border-white/10 bg-[#131314] p-6 lg:p-8 flex-col justify-between z-30 select-none">
       <div className="space-y-6">
-        {/* Name & Title */}
-        <div className='p-3'>
-          <h1 className="text-xl lg:text-2xl font-medium text-white tracking-tight mt-4">
+        {/* Brand Icon, Name & Title */}
+        <div className="p-3">
+          <button
+            onClick={() => onNavigate('overview')}
+            className="cursor-pointer focus:outline-none mb-3.5 block group"
+            aria-label="Overview"
+          >
+            <img
+              src="/brand-icon.png"
+              alt="Brand Icon"
+              className="w-8 h-8 lg:w-9 lg:h-9 object-contain transition-transform group-hover:scale-105"
+            />
+          </button>
+          <h1 className="text-xl lg:text-2xl font-medium text-white tracking-tight">
             {profile.fullName}
           </h1>
-          <p className="text-xs lg:text-sm font-normal mt-0.5">
+          <p className="text-xs lg:text-sm font-normal text-neutral-400 mt-0.5">
             {profile.roleTitle}
           </p>
         </div>

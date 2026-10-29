@@ -11,8 +11,8 @@ export const profileData = {
     tagline:
       "Building AI-powered systems, edge solutions, and mobile applications to solve real-world challenges.",
     callToActionHighlight: "Let's solve real-world problems together.",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBzxEc1IySMvicV_weLhFjCZ0dk5nE7yR_TdkPHICRqfly0TXxo3md_MiMROKuGQbdtdZuU39vT1Ccu4DCSFWa91ACHYCFKOpIrhG5_E3Xx-CEYytWiucYy9z2bffMNds7Hye08-8Ah_DAPmDoD1VobSPybxmjMkeM5G_S2RgvDgMq--gVB6IYWKQ_8gr1EY5_5ytywzDuzsShUe4dimrdwTpwF4dhFC22yv_rAc1ts",
-    logo: "/assets/ai-drian-colored.svg",
+    avatar: "/avatar.jpg",
+    logo: "/brand-icon.png",
     badges: [
       {
         id: "cpe",

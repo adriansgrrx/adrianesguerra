@@ -20,12 +20,18 @@ export default function MobileNavbar({ profile, onNavigate }) {
   };
 
   return (
-    <header className="lg:hidden sticky top-0 z-40 bg-[#131314]/95 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 py-3.5 flex items-center justify-between select-none">
-      <div className="flex items-center gap-2.5">
-        <span className="font-medium text-white text-sm tracking-tight truncate max-w-[200px] sm:max-w-none">
-          {profile.fullName}
-        </span>
-      </div>
+    <header className="lg:hidden sticky top-0 z-40 bg-[#131314]/95 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 py-3 flex items-center justify-between select-none">
+      <button
+        onClick={() => handleLinkClick('overview')}
+        className="flex items-center cursor-pointer focus:outline-none group"
+        aria-label="Overview"
+      >
+        <img
+          src="/brand-icon.png"
+          alt="Brand Icon"
+          className="w-7 h-7 object-contain transition-transform group-hover:scale-105"
+        />
+      </button>
 
       <div className="flex items-center gap-2">
         <button
