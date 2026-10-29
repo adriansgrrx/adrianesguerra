@@ -64,28 +64,28 @@ export default function OverviewSection({ profile, onNavigate }) {
 
         <div className="space-y-1 px-0 sm:px-4 sm:border-l sm:border-white/10">
           <div className="font-mono text-base sm:text-lg font-semibold text-white">
-            83%
+            83% mAP
           </div>
           <div className="text-xs text-neutral-400 font-mono leading-tight">
-            Defect Accuracy (Edge AI)
+            Vision Model Precision
           </div>
         </div>
 
         <div className="space-y-1 pr-4 sm:px-4 sm:border-l sm:border-white/10">
           <div className="font-mono text-base sm:text-lg font-semibold text-white">
-            17k+
+            1.42
           </div>
           <div className="text-xs text-neutral-400 font-mono leading-tight">
-            Annotated Dataset Samples
+            PUP Manila GWA
           </div>
         </div>
 
         <div className="space-y-1 px-0 sm:px-4 sm:border-l sm:border-white/10">
           <div className="font-mono text-base sm:text-lg font-semibold text-[#d0bcff]">
-            10+ Stacks
+            5 Projects
           </div>
           <div className="text-xs text-neutral-400 font-mono leading-tight">
-            AI, Cloud & Mobile
+            AI, Web & Mobile
           </div>
         </div>
       </div>

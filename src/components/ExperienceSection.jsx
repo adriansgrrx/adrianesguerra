@@ -17,7 +17,7 @@ export default function ExperienceSection({ experiences }) {
                     {exp.role}
                   </h3>
                   <div className="text-xs sm:text-sm text-neutral-400 font-normal mt-0.5">
-                    {exp.company}
+                    {exp.company} {exp.location && <span className="text-neutral-500 font-mono text-xs">• {exp.location}</span>}
                   </div>
                 </div>
                 <span className="text-xs text-neutral-500 font-mono shrink-0">

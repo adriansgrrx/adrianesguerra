@@ -32,13 +32,20 @@ export default function Sidebar({ profile, activeSection, onNavigate }) {
     <aside className="hidden lg:flex w-[20%] min-w-[240px] max-w-[280px] h-screen fixed top-0 left-0 border-r border-white/10 bg-[#131314] p-6 lg:p-8 flex-col justify-between z-30 select-none">
       <div className="space-y-6">
         {/* Brand Icon, Name & Title */}
-        <div className="p-3">
-          <h1 className="text-xl lg:text-2xl font-medium text-white tracking-tight">
-            {profile.fullName}
-          </h1>
-          <p className="text-xs lg:text-sm font-normal text-neutral-400 mt-0.5">
-            {profile.roleTitle}
-          </p>
+        <div className="p-3 space-y-3">
+          <img
+            src="/brand-icon.png"
+            alt={profile.fullName}
+            className="w-10 h-10 rounded-xl object-cover border border-white/10"
+          />
+          <div>
+            <h1 className="text-xl lg:text-md font-medium text-white tracking-tight">
+              {profile.fullName}
+            </h1>
+            <p className="text-xs lg:text-sm font-normal text-neutral-400 mt-0.5">
+              {profile.roleTitle}
+            </p>
+          </div>
         </div>
 
         {/* Clean Vertical Navigation without icons or left indicator */}
