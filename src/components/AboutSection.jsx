@@ -48,7 +48,7 @@ export default function AboutSection({ about }) {
           <div className="pt-4 border-t border-white/5 space-y-1">
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
               <h3 className="text-base font-medium text-neutral-300">
-                Northern Zambales College, Inc. <span className="text-neutral-500 text-xs font-normal">(NZCI) — Masinloc, Zambales</span>
+                Northern Zambales College, Inc. <span className="text-neutral-500 text-sm font-normal">(NZCI) — Masinloc, Zambales</span>
               </h3>
               <span className="text-xs text-neutral-500 font-mono">Jul 2019 – Jul 2021</span>
             </div>

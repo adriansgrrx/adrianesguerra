@@ -591,7 +591,7 @@ export const skillCategories = [
       { name: "Node.js", proficiency: "Intermediate" },
       { name: "RESTful APIs", proficiency: "Intermediate" },
       { name: "Android Studio", proficiency: "Intermediate" },
-      { name: "Express", proficiency: "Beginner" },
+      { name: "Express", proficiency: "Intermediate" },
       { name: "MERN Stack", proficiency: "Intermediate" },
       { name: "PERN Stack", proficiency: "Intermediate" },
       { name: "shadcn", proficiency: "Intermediate" },
