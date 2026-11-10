@@ -161,7 +161,7 @@ export const profileData = {
   seo: {
     title: "Adrian Esguerra",
     description:
-      "AI Enthusiast | Computer Engineer | Software Developer | PUP Graduate",
+      "Adrian Esguerra is a Computer Engineer, Software Developer, and PUP graduate—an AI enthusiast building practical AI, data, and full-stack software.",
     url: "https://www.adrianesguerra.site/",
     ogImage: "https://www.adrianesguerra.site/og-image.jpg",
     twitterImage: "https://www.adrianesguerra.site/og-image.jpg",
