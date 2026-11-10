@@ -34,8 +34,19 @@ const writePage = (urlPath, html) => {
   fs.writeFileSync(path.join(outDir, 'index.html'), html);
 };
 
-// 1. Home page
-writePage('/', injectApp(template, render(null)));
+// 1. Home page (syncs title & description from profileData.seo if defined)
+let homeHtml = template;
+if (profileData.seo?.title) {
+  homeHtml = homeHtml.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeAttr(profileData.seo.title)}</title>`);
+  homeHtml = setMeta(homeHtml, 'property', 'og:title', profileData.seo.title);
+  homeHtml = setMeta(homeHtml, 'name', 'twitter:title', profileData.seo.title);
+}
+if (profileData.seo?.description) {
+  homeHtml = setMeta(homeHtml, 'name', 'description', profileData.seo.description);
+  homeHtml = setMeta(homeHtml, 'property', 'og:description', profileData.seo.description);
+  homeHtml = setMeta(homeHtml, 'name', 'twitter:description', profileData.seo.description);
+}
+writePage('/', injectApp(homeHtml, render(null)));
 
 // 2. Project pages
 const sitemapUrls = [{ loc: `${SITE_URL}/`, priority: '1.0' }];

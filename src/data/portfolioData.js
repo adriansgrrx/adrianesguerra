@@ -159,12 +159,12 @@ export const profileData = {
     "Web Development (React / Node.js)",
   ],
   seo: {
-    title: "Adrian R. Esguerra",
+    title: "Adrian Esguerra",
     description:
-      "MDA @Vertiv | Ex-General Motors PH | AI Enthusiast | Computer Engineer | LSSYB Trained",
+      "AI Enthusiast | Computer Engineer | Software Developer | PUP Graduate",
     url: "https://www.adrianesguerra.site/",
-    ogImage: "https://www.adrianesguerra.site/brand-icon.png",
-    twitterImage: "https://www.adrianesguerra.site/brand-icon.png",
+    ogImage: "https://www.adrianesguerra.site/og-image.jpg",
+    twitterImage: "https://www.adrianesguerra.site/og-image.jpg",
   },
 };
 
