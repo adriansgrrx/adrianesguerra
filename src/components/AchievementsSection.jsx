@@ -20,7 +20,7 @@ export default function AchievementsSection({ achievements, achievementTypes }) 
     <section id="achievements" className="scroll-mt-12 border-b border-white/10 pb-16 pt-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div className="text-xs tracking-widest uppercase text-neutral-500 font-mono">
-          <span>05 / Credentials & Honors</span>
+          <h2>05 / Credentials & Honors</h2>
         </div>
 
         {/* Filter Pills */}

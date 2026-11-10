@@ -2,13 +2,7 @@
   "$schema": "https://json.schemastore.org/staticwebapp.config.json",
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/assets/*", "/Featured/*", "/cv/*", "/*.{png,jpg,jpeg,gif,svg,ico,pdf,txt,css,js,json}"]
-  },
-  "responseOverrides": {
-    "404": {
-      "rewrite": "/index.html",
-      "statusCode": 200
-    }
+    "exclude": ["/assets/*", "/Featured/*", "/cv/*", "/*.{png,jpg,jpeg,gif,svg,ico,pdf,txt,xml,webp,css,js,json}"]
   },
   "globalHeaders": {
     "X-Frame-Options": "SAMEORIGIN",

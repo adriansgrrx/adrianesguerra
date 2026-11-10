@@ -7,7 +7,7 @@ export default function SkillsSection({ skillCategories, proficiencyLevels }) {
     <section id="skills" className="scroll-mt-12 border-b border-white/10 pb-16 pt-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
         <div className="text-xs tracking-widest uppercase text-neutral-500 font-mono">
-          <span>03 / Technical Stack & Skills</span>
+          <h2>03 / Technical Stack & Skills</h2>
         </div>
 
         {/* Proficiency Filter */}

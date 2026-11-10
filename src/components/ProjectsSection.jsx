@@ -27,7 +27,7 @@ export default function ProjectsSection({ projects, projectTypes, onSelectProjec
     <section id="projects" className="scroll-mt-12 border-b border-white/10 pb-16 pt-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
         <div className="text-xs tracking-widest uppercase text-neutral-500 font-mono">
-          <span>02 / Selected Work & Projects</span>
+          <h2>02 / Selected Work & Projects</h2>
         </div>
 
         {/* Filter Pills: inlined on sm and up, wrapping or scrollable on mobile */}

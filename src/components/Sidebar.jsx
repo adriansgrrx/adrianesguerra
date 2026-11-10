@@ -41,9 +41,9 @@ export default function Sidebar({ profile, activeSection, onNavigate }) {
             title="Navigate to Overview"
           >
             <div>
-              <h1 className="text-xl lg:text-md font-medium text-white tracking-tight group-hover:text-[#a8c7fa] transition-colors">
+              <p className="text-xl lg:text-md font-medium text-white tracking-tight group-hover:text-[#a8c7fa] transition-colors">
                 {profile.fullName}
-              </h1>
+              </p>
               <p className="text-xs lg:text-sm font-normal text-neutral-400 mt-0.5">
                 {profile.roleTitle}
               </p>

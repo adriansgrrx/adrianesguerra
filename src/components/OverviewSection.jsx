@@ -58,7 +58,11 @@ export default function OverviewSection({ profile, onNavigate }) {
         <div className="relative shrink-0">
           <img
             src={profile.hero.avatar}
-            alt={profile.fullName}
+            alt={`${profile.fullName}, ${profile.roleTitle}`}
+            width={1024}
+            height={1024}
+            fetchPriority="high"
+            decoding="async"
             className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-2xl object-cover border border-white/15 bg-[#1e1f20]"
           />
         </div>

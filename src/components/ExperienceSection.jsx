@@ -9,7 +9,7 @@ export default function ExperienceSection({ experiences }) {
   return (
     <section id="experience" className="scroll-mt-12 border-b border-white/10 pb-16 pt-6">
       <div className="text-xs tracking-widest uppercase text-neutral-500 font-mono mb-8">
-        <span>04 / Experience</span>
+        <h2>04 / Experience</h2>
       </div>
 
       <div className="space-y-8">
