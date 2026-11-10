@@ -1,7 +1,7 @@
 import { profileData, projectsData } from '../data/portfolioData';
 
 export const SITE_URL = 'https://www.adrianesguerra.site';
-export const DEFAULT_TITLE = 'Adrian Esguerra | Computer Engineer – AI, Big Data & Full-Stack Developer';
+export const DEFAULT_TITLE = 'Adrian Esguerra';
 
 export const getProjectPath = (slug) => `/projects/${slug}/`;
 

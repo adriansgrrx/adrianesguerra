@@ -96,7 +96,7 @@ export default function Sidebar({ profile, activeSection, onNavigate }) {
             <a
               href="https://github.com/adriansgrrx"
               target="_blank"
-              rel="noreferrer"
+              rel="me noopener noreferrer"
               className="hover:text-white transition-colors"
             >
               GitHub
@@ -105,7 +105,7 @@ export default function Sidebar({ profile, activeSection, onNavigate }) {
             <a
               href="https://www.linkedin.com/in/adrian-esguerra-44a899189/"
               target="_blank"
-              rel="noreferrer"
+              rel="me noopener noreferrer"
               className="hover:text-white transition-colors"
             >
               LinkedIn

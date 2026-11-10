@@ -11,7 +11,7 @@ export const profileData = {
     tagline:
       "MDA @Vertiv | Ex-General Motors PH | AI Enthusiast | Computer Engineer | LSSYB Trained",
     callToActionHighlight: "Let's solve real-world problems together.",
-    avatar: "/avatar.jpg",
+    avatar: "/avatar-256.jpg",
     logo: "/brand-icon.png",
     badges: [
       {
