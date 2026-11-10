@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Sidebar from './components/Sidebar';
 import MobileNavbar from './components/MobileNavbar';
 import OverviewSection from './components/OverviewSection';
@@ -20,10 +20,46 @@ import {
   achievementsData,
   achievementTypes,
 } from './data/portfolioData';
+import {
+  getProjectBySlug,
+  getProjectPath,
+  getSlugFromPath,
+  getProjectTitle,
+  DEFAULT_TITLE,
+} from './utils/projectRoutes';
 
-export default function App() {
+export default function App({ initialProjectSlug = null }) {
   const [activeSection, setActiveSection] = useState('overview');
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(() => getProjectBySlug(initialProjectSlug));
+
+  // Keep the URL and document title in sync with the open project modal,
+  // so every project has its own shareable, indexable URL (/projects/<slug>/).
+  const openProject = useCallback((project) => {
+    setSelectedProject(project);
+    if (project?.slug) {
+      window.history.pushState({ slug: project.slug }, '', getProjectPath(project.slug));
+      document.title = getProjectTitle(project);
+    }
+  }, []);
+
+  const closeProject = useCallback(() => {
+    setSelectedProject(null);
+    if (getSlugFromPath(window.location.pathname)) {
+      window.history.pushState({}, '', '/');
+    }
+    document.title = DEFAULT_TITLE;
+  }, []);
+
+  // Handle browser back/forward navigation between project URLs
+  useEffect(() => {
+    const handlePopState = () => {
+      const project = getProjectBySlug(getSlugFromPath(window.location.pathname));
+      setSelectedProject(project);
+      document.title = project ? getProjectTitle(project) : DEFAULT_TITLE;
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Scrollspy to update active section based on scroll position
   useEffect(() => {
@@ -78,7 +114,7 @@ export default function App() {
             <ProjectsSection
               projects={projectsData}
               projectTypes={projectTypes}
-              onSelectProject={setSelectedProject}
+              onSelectProject={openProject}
             />
             <SkillsSection
               skillCategories={skillCategories}
@@ -97,7 +133,7 @@ export default function App() {
       {/* Detail Modal */}
       <ProjectModal
         project={selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={closeProject}
       />
     </div>
   );
