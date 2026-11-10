@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+  "trailingSlash": "always",
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/assets/*", "/Featured/*", "/cv/*", "/*.{png,jpg,jpeg,gif,svg,ico,pdf,txt,xml,webp,css,js,json}"]

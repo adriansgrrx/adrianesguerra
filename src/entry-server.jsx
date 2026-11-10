@@ -12,3 +12,4 @@ export function render(initialProjectSlug = null) {
     </StrictMode>
   );
 }
+

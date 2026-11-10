@@ -108,3 +108,4 @@ fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);
 fs.rmSync(ssrDir, { recursive: true, force: true });
 console.log(`Pre-rendered ${sitemapUrls.length} pages:`);
 sitemapUrls.forEach((u) => console.log(`  ${u.loc}`));
+

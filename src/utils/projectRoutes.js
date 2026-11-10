@@ -17,3 +17,4 @@ export const getProjectBySlug = (slug) =>
 
 export const getProjectTitle = (project) =>
   `${project.title} – ${project.subtitle || project.type} | ${profileData.fullName}`;
+
